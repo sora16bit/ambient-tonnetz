@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AMBIENT TONNETZ — Play Ambient Music in Your Browser</title>
+<meta name="description" content="A hexagonal Tonnetz keyboard for making ambient music — all in your browser. Layer loops, blend waveforms, add reverb. No music theory needed. Free to play.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tonnetz.sora16bit.com">
+<meta property="og:title" content="AMBIENT TONNETZ — Play Ambient Music in Your Browser">
+<meta property="og:description" content="A hexagonal Tonnetz keyboard for making ambient music. Layer loops, blend waveforms, add reverb. No theory needed.">
+<meta property="og:image" content="https://tonnetz.sora16bit.com/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AMBIENT TONNETZ — Play Ambient Music in Your Browser">
+<meta name="twitter:description" content="Hexagonal ambient music keyboard. Layer loops, blend waveforms, add reverb. All in the browser.">
+<meta name="twitter:image" content="https://tonnetz.sora16bit.com/icon-512.png">
+<link rel="icon" type="image/png" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="manifest" href="/manifest.json">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; touch-action: none; user-select: none; -webkit-user-select: none; }
+body { background: #000; overflow: hidden; font-family: monospace; }
+canvas { display: block; cursor: none; }
+
+#rotate-prompt {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgb(2,4,15);
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 20px;
+  font-family: monospace; color: rgba(190,202,225,0.85);
+  text-align: center;
+}
+#rotate-prompt svg { opacity: 0.6; animation: rot 2s ease-in-out infinite; }
+@keyframes rot {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(90deg); }
+}
+#rotate-prompt p { font-size: 13px; letter-spacing: 2px; }
+
+@media (max-width: 768px) and (orientation: portrait) {
+  #rotate-prompt { display: flex; }
+  canvas, #c { display: none; }
+}
+</style>
+</head>
+<body>
+<div id="rotate-prompt">
+  <p>ROTATE TO LANDSCAPE<br><span style="font-size:11px;opacity:0.5;letter-spacing:1px;">横向きにしてください</span></p>
+</div>
+<canvas id="c"></canvas>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

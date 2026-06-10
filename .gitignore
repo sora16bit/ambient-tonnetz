@@ -1,0 +1,16 @@
+.worktrees/
+node_modules/
+dist/
+.env
+*.local
+.git-backup-old/
+
+# Local agent / editor config
+.claude/
+CLAUDE.md
+
+# Cloudflare local state (contains account id)
+.wrangler/
+
+# Internal dev plans & specs (not for the public repo)
+docs/superpowers/
